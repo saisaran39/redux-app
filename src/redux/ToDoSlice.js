@@ -1,20 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const toDoSlice = createSlice({
-    name:'toDoSlice',
+const todoSlice = createSlice({
+    name: 'todoslice',
     initialState: {
-        toDoList: [],
-        currentTask: ""
+        todoList: [],
+        value: ""
     },
     reducers: {
-        setValue : (state, descObj)=> {
-            state.currentTask = descObj.payload;
+        setValue: (state, descObj) => {
+            debugger
+            state.value = descObj.payload
         },
-        setList: (state) => {
-            state.toDoList.push(state.currentTask);
-            state.currentTask = ""
+        updatedList: (state) => {
+            state.todoList.push(state.value);
+            state.value = ""
         }
     }
 })
 
-export default toDoSlice;
+export default todoSlice;
